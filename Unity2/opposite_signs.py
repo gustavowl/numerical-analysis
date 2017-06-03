@@ -32,9 +32,9 @@ if len(sys.argv) < 5:
 
 else:
 	filename = sys.argv[1] #file storing the function
-	x = sys.argv[2] #initial X
-	i = sys.argv[3] #pace
-	m = sys.argv[4] #number of iteractions
+	x = float(sys.argv[2]) #initial X
+	i = float(sys.argv[3]) #pace
+	m = int(sys.argv[4]) #number of iteractions
 
 	#generates function from file
 	with open(filename) as file:
@@ -44,4 +44,4 @@ else:
 	func = [float(x) for x in func] #converts elements from str to float
 	func = func[::-1] #inverts function so it can be properly processed
 
-	print(bracket_function(func, -10, 0.2, 50))
+	print(bracket_function(func, x, i, m))
