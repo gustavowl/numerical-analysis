@@ -6,12 +6,12 @@ def function(f, x): #computes f(x), return it
 	return y
 
 
-def bracket_function(func, x, interval, max_iteractions):
+def bracket_function(func, x, interval, max_iterations):
 	#function is must be a list
 	
 	y1 = function(func, x)
 
-	for i in range(max_iteractions):
+	for i in range(max_iterations):
 		x += interval
 		y2 = function(func, x)
 		if y1 * y2 <= 0:

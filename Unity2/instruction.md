@@ -16,7 +16,7 @@ Supposing you have python3 installed, run the following command:
 * \<file\> is the file that contains the function. e.g. the file containing the function x² -2 would have the following content \(without quotes\): "1 0 -2"
 * \<x\> is the start x for which the function will be applied: f\(x\)
 * \<interval\> the interval which is going to be tested during each iteraction; i.e. it will test if the interval [f\(x\), f\(x + interval\)] brackets a root
-* \<max\_iteractions\> the desired max number of iterations
+* \<max\_iterations\> the desired max number of iterations
 
 ##lagrange_and_opposite_sign.py
 #### Input
@@ -27,6 +27,7 @@ It applies the lagrange method to bracket a root and then applies the opposite s
 
 #### Ouput
 Returns the interval that brackets a root of the function.
+
 #### how to run?
 ```python lagrange\_and\_opposite\_sign.py \<file\> \<interval\_delta\>```
 * \<file\> is the file that contains the function. e.g. the file containing the function x² -2 would have the following content \(without quotes\): "1 0 -2"

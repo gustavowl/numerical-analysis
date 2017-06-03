@@ -9,6 +9,6 @@ else:
 	filename = sys.argv[1] #file storing the function
 	x = float(sys.argv[2]) #initial X
 	i = float(sys.argv[3]) #pace
-	m = int(sys.argv[4]) #number of iteractions
+	m = int(sys.argv[4]) #number of iterations
 	func = mod_op_signs.get_function_from_file(filename)
 	print(mod_op_signs.bracket_function(func, x, i, m))
