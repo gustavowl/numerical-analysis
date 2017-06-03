@@ -1,5 +1,6 @@
 import mod_op_signs
 import math
+import sys
 
 #finds the limit of the function. Either inferior or superior.
 #it just applies L = 1 + (B/an)^(1/(n-k))
@@ -37,7 +38,7 @@ def lagrange_bracketing(func):
 	sup = find_limit(func)
 
 	#does P1(x) = x^n P(1/x)
-	func2 = func[::-1] #creates a copy of func
+	func2 = func[::-1]
 	#if an < 0, multiply function by -1
 	if func2[n] < 0:
 		func2 = [x*-1 for x in func2]
@@ -46,6 +47,27 @@ def lagrange_bracketing(func):
 	inf = find_limit(func2)
 	return [inf, sup]
 
+def lagrange_and_opposite_sign(func, delta):
+	interval = lagrange_bracketing(func)
+	print("LaGrange bracketing: " + str(interval))
+	max_iterations = math.ceil( (interval[1] - interval[0])
+		/ delta)
 
-#print(find_limit(mod_op_signs.get_function_from_file("function.txt")))
-print(lagrange_bracketing(mod_op_signs.get_function_from_file("function.txt")))
+	print([func, interval[0], delta, max_iterations])
+	interval = mod_op_signs.bracket_function(func, interval[0], 
+		delta, max_iterations)
+
+	print ("LaGrange after OppSign: " + str(interval))
+	return interval
+	
+
+
+
+if len(sys.argv) < 3:
+	print("Invalid number of arguments. Read the instruction.md file")
+
+else:
+	filename = sys.argv[1] #file storing the function
+	delta = float(sys.argv[2]) #interval precision for opp_sign bracketing
+	func = mod_op_signs.get_function_from_file(filename)
+	print(lagrange_and_opposite_sign(func, delta))

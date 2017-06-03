@@ -10,6 +10,7 @@ def bracket_function(func, x, interval, max_iterations):
 	#function is must be a list
 	
 	y1 = function(func, x)
+	print(y1)
 
 	for i in range(max_iterations):
 		x += interval
