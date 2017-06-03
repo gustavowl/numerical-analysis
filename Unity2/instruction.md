@@ -23,7 +23,7 @@ Supposing you have python3 installed, run the following command:
 It receives 2 inputs: a function and an interval delta.
 
 #### What does it do?
-It applies the lagrange method to bracket a root and then applies the opposite sign method in order to tighten the interval.
+It applies the lagrange method to bracket a root and then applies the opposite sign method in order to tighten the interval. **LaGrange method will only work if, and only if, for the given polynomial there exists a coefficient c such that c < 0 AND for the polynomial with degree n, the coefficient __An__ < 0 AND the coefficient __A0__ ≠ 0**
 
 #### Ouput
 Returns the interval that brackets a root of the function.
