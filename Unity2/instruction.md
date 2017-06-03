@@ -18,7 +18,7 @@ Supposing you have python3 installed, run the following command:
 * \<interval\> the interval which is going to be tested during each iteraction; i.e. it will test if the interval [f\(x\), f\(x + interval\)] brackets a root
 * \<max\_iterations\> the desired max number of iterations
 
-##lagrange_and_opposite_sign.py
+## lagrange_and_opposite_sign.py
 #### Input
 It receives 2 inputs: a function and an interval delta.
 
