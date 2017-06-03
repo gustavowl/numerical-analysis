@@ -23,3 +23,12 @@ def bracket_function(func, x, interval, max_iteractions):
 		y1 = y2
 	#else stop method
 	return None
+
+def get_function_from_file(filename):
+	#generates function from file
+	with open(filename) as file:
+		content = file.read() #reads file. it should have only one line
+	file.close()
+	func = content.split(' ') #stores function
+	func = [float(x) for x in func] #converts elements from str to float
+	return func[::-1] #inverts function so it can be properly processed
