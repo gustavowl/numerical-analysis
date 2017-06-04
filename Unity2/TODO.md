@@ -1,6 +1,6 @@
 ## Implementation tasks
-- [ ] Change mod_op_signs.py to work with eval()
-- [ ] Change opposite_signs.py to work with eval()
+- [x] Change mod_op_signs.py to work with eval()
+- [x] Change opposite_signs.py to work with eval()
 - [ ] Change lagrange_and_opposite_sign.py to work with eval()
 - [x] Change bissection.py to work with eval()
 - [ ] Change secant.py to work with eval()
