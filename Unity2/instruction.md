@@ -32,3 +32,20 @@ Returns the interval that brackets a root of the function.
 ```python lagrange\_and\_opposite\_sign.py \<file\> \<interval\_delta\>```
 * \<file\> is the file that contains the function. e.g. the file containing the function x² -2 would have the following content \(without quotes\): "1 0 -2"
 * \<interval\_delta\> is the precision of the interval. For instance, consider the function x \- 1 \(which has root 1\) and precision 0.001; then, a possible output would be [0.9995, 1.0005]
+
+## bissection.py
+#### Input
+This code receives 4 inputs. The file containing the function, the interval start, the interval end and the max number of iteration.
+
+#### What does it do?
+It executes the bissection method to the required interval. It will stop if either the max numer of iterations was reached or if it have found a root.
+
+#### Output
+Returns the closest found value to the root
+
+#### How to run?
+```python bissection.py <interval_start> <interval_end> <iteractions>```
+* \<file\> is the file that contains the function. e.g. the file containing the function x² -2 would have the following content \(without quotes\): "1 0 -2"
+* \<interval\_start\> A float number representing the begginning of the interval that is bracketing a root
+* \<interval\_end\> A float number representing the end of the interval that is bracketing a root
+* \<iteraction\> An integer number representing the maximum number of iterations for which the method will be executed
