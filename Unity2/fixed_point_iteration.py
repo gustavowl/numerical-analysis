@@ -19,9 +19,10 @@ def fixed_point(func, x, epsolon, iterations):
 		x1 = eval(func)
 		#check if with desired precision
 		if math.fabs(x - x1) <= epsolon:
+			print("ITERATIONS: " + str(i + 1))
 			return x1
 		x = x1
-
+	print("ITERATIONS: " + str(iterations))
 	return x
 
 
