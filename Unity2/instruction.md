@@ -66,3 +66,20 @@ Returns the closest found value to the root
 * \<interval\_start\> A float number representing the begginning of the interval that is bracketing a root
 * \<interval\_end\> A float number representing the end of the interval that is bracketing a root
 * \<iteraction\> An integer number representing the maximum number of iterations for which the method will be executed
+
+## fixed_point_iteration.py
+#### Input
+This code receives 4 inputs. The file containing the function, the interval start, the interval end and the max number of iterations.
+
+#### What does it do?
+It executes the secant method to the required interval. It will stop if either the max numer of iterations was reached or if it have found a root.
+
+#### Output
+Returns the closest found value to the root
+
+#### How to run?
+```python fixed_point_iteration.py <filename> <x> <epsolon> <iteractions>```
+* \<filename\> is the file that contains the function to be evaluetaded by python's eval(). e.g. the file containing the function x² -2 would have the following content \(without quotes\): "math.pow(x, 2) - 2"
+* \<x\> A float number representing the initial guess for the root
+* \<epsolon\> A float number representing the desired precision
+* \<iteraction\> An integer number representing the maximum number of iterations for which the method will be executed
