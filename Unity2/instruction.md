@@ -62,7 +62,7 @@ Returns the closest found value to the root
 
 #### How to run?
 ```python secant.py <filename> <interval_start> <interval_end> <iteractions>```
-* \<filename\> is the file that contains the function. e.g. the file containing the function x² -2 would have the following content \(without quotes\): "1 0 -2"
+* \<filename\> is the file that contains the function to be evaluated by python's eval(). e.g. the file containing the function x² -2 would have the following content \(without quotes\): "math.pow(x, 2) - 2"
 * \<interval\_start\> A float number representing the begginning of the interval that is bracketing a root
 * \<interval\_end\> A float number representing the end of the interval that is bracketing a root
 * \<iteraction\> An integer number representing the maximum number of iterations for which the method will be executed
