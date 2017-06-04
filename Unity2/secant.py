@@ -2,7 +2,7 @@ import sys
 import mod_op_signs
 import math
 
-def bissection(func, interval_start, interval_end, iterations):
+def secant(func, interval_start, interval_end, iterations):
 	#verifies if input is valid
 	if (interval_start == interval_end):
 		return interval_start
@@ -25,11 +25,10 @@ def bissection(func, interval_start, interval_end, iterations):
 	new_x = 0 #declaring auxiliary variables
 	y3 = 0 #declaring auxiliary variables
 
-	#executes bissection method
+	#executes secant method
 	for i in range(iterations):
-		new_x = (interval_start + interval_end) / 2
+		new_x = interval_start - ((interval_end - interval_start) * y1) / (y2 - y1)
 		y3 = mod_op_signs.function(func, new_x)
-
 		
 		#print(str(interval_start) + " " + str(new_x) + " " + str(interval_end))
 		#verifies if root
@@ -45,15 +44,24 @@ def bissection(func, interval_start, interval_end, iterations):
 			print("ITERATIONS: " + str(i + 1))
 			return new_x
 
-		#continues bissection
+		#continues secant method
 		if y3 < 0:
 			interval_start = new_x
+			y1 = y3
 			continue
 
 		interval_end = new_x
+		y2 = y3
 
 	print("ITERATIONS: " + str(i + 1))
-	return new_x
+	#verifies which value is closest to the root
+	#does this because, depending on the values it may enter an
+	#infinite loop an never get closer to the root
+	y1 = mod_op_signs.function(func, interval_start)
+	y2 = mod_op_signs.function(func, interval_end)
+	if math.fabs(y1) <= math.fabs(y2):
+		return interval_start
+	return interval_end
 
 
 
@@ -67,4 +75,4 @@ else:
 	iterations = int(sys.argv[4])
 
 	func = mod_op_signs.get_function_from_file(filename)
-	print(bissection(func, interval_start, interval_end, iterations))
+	print(secant(func, interval_start, interval_end, iterations))
