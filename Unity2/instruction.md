@@ -45,7 +45,7 @@ Returns the closest found value to the root
 
 #### How to run?
 ```python bissection.py <filename> <interval_start> <interval_end> <iteractions>```
-* \<filename\> is the file that contains the function. e.g. the file containing the function x² -2 would have the following content \(without quotes\): "1 0 -2"
+* \<filename\> is the file that contains the function to be evaluated by python's eval(). e.g. the file containing the function x² -2 would have the following content \(without quotes\): "math.pow(x, 2) - 2"
 * \<interval\_start\> A float number representing the begginning of the interval that is bracketing a root
 * \<interval\_end\> A float number representing the end of the interval that is bracketing a root
 * \<iteraction\> An integer number representing the maximum number of iterations for which the method will be executed
@@ -79,7 +79,7 @@ Returns the closest found value to the root
 
 #### How to run?
 ```python fixed_point_iteration.py <filename> <x> <epsolon> <iteractions>```
-* \<filename\> is the file that contains the function to be evaluetaded by python's eval(). e.g. the file containing the function x² -2 would have the following content \(without quotes\): "math.pow(x, 2) - 2"
+* \<filename\> is the file that contains the function to be evaluated by python's eval(). e.g. the file containing the function x² -2 would have the following content \(without quotes\): "math.pow(x, 2) - 2"
 * \<x\> A float number representing the initial guess for the root
 * \<epsolon\> A float number representing the desired precision
 * \<iteraction\> An integer number representing the maximum number of iterations for which the method will be executed
