@@ -44,11 +44,11 @@ It executes the bissection method to the required interval. It will stop if eith
 Returns the closest found value to the root
 
 #### How to run?
-```python bissection.py <filename> <interval_start> <interval_end> <iteractions>```
+```python bissection.py <filename> <interval_start> <interval_end> <iterations>```
 * \<filename\> is the file that contains the function to be evaluated by python's eval(). e.g. the file containing the function x² -2 would have the following content \(without quotes\): "math.pow(x, 2) - 2"
 * \<interval\_start\> A float number representing the begginning of the interval that is bracketing a root
 * \<interval\_end\> A float number representing the end of the interval that is bracketing a root
-* \<iteraction\> An integer number representing the maximum number of iterations for which the method will be executed
+* \<iteration\> An integer number representing the maximum number of iterations for which the method will be executed
 
 ## secant.py
 #### Input
@@ -69,10 +69,10 @@ Returns the closest found value to the root
 
 ## fixed_point_iteration.py
 #### Input
-This code receives 4 inputs. The file containing the function, the interval start, the interval end and the max number of iterations.
+This code receives 4 inputs. The file containing the function, the starting value of x, the desired precision epsolon and the max number of iterations.
 
 #### What does it do?
-It executes the secant method to the required interval. It will stop if either the max numer of iterations was reached or if it have found a root.
+It executes the fixed point iteration method to the required interval. It will stop if either the max numer of iterations was reached or if it have found a root.
 
 #### Output
 Returns the closest found value to the root
@@ -83,3 +83,22 @@ Returns the closest found value to the root
 * \<x\> A float number representing the initial guess for the root
 * \<epsolon\> A float number representing the desired precision
 * \<iteraction\> An integer number representing the maximum number of iterations for which the method will be executed
+
+## bnewton.py
+#### Input
+This code receives 6 inputs. The file containing the function, the interval start for bissection, the interval end for bissection, the max number of iterations for bissection method, the file containing the derivative function and the max number of iterations for the newton method.
+
+#### What does it do?
+It executes an hybrid approach. It runs the bissection method accordingly with the given parameters \(see [bissection.py](#bissection.py) for more info\). Then, it executes the newton method starting at the X found with bissection. It does not verify if the derivative function is correct. Newton's method will finish whenever it has found the root **or** it has executed the maximum number of iterations **or** it has reached the machine precision 
+
+#### Output
+Returns the closest found value to the root
+
+#### How to run?
+```python bnewton.py <function_filename> <interval_start> <interval_end> <iterations> <derivative_filename> <iterations_newton>```
+* \<function\_filename\> is the file that contains the function to be evaluated by python's eval(). e.g. the file containing the function x² -2 would have the following content \(without quotes\): "math.pow(x, 2) - 2"
+* \<interval\_start\> A float number representing the begginning of the interval that is bracketing a root. It will only be used for **Bissection's** method.
+* \<interval\_end\> A float number representing the end of the interval that is bracketing a root. It will only be used for **Bissection's** method.
+* \<iterations\_bissection\> An integer number representing the maximum number of iterations for which the **bissection** method will be executed.
+* \<derivative\_\filename\> is the file that contains the derivative function to be evaluated by python's eval(). e.g. the file containing the function x² -2 would have the following content \(without quotes\): "math.pow(x, 2) - 2". This function will only be used for **Newton's** method
+* \<iterations\_\newton\> An integer number representing the maximum number of iterations for which the **Newton's** method will be executed.

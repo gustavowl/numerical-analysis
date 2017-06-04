@@ -5,5 +5,5 @@
 - [x] Change bissection.py to work with eval()
 - [x] Change secant.py to work with eval()
 - [x] Change fixed_point_iteration.py to work with eval()
-- [ ] Implement bissection_newton.py
+- [x] Implement bissection_newton.py
 - [ ] Implement broyden.py for solving non-linear systems
