@@ -102,3 +102,28 @@ Returns the closest found value to the root
 * \<iterations\_bissection\> An integer number representing the maximum number of iterations for which the **bissection** method will be executed.
 * \<derivative\_\filename\> is the file that contains the derivative function to be evaluated by python's eval(). e.g. the file containing the function x² -2 would have the following content \(without quotes\): "math.pow(x, 2) - 2". This function will only be used for **Newton's** method
 * \<iterations\_\newton\> An integer number representing the maximum number of iterations for which the **Newton's** method will be executed.
+
+## broyden.py
+#### Input
+This code receives 3 inputs. The matrix corresponding to the linear system, the initial guess for the vector X and the max number of iterations
+
+#### What does it do?
+It executes the broyden method for solving the nonlinear system sent via parameters.
+
+#### Output
+Returns the closest found value to the roots
+
+#### How to run?
+```python broyden.py <matrix_filename> <initial_guess> <max_iterations>```
+* \<matrix\_filename\> is the file that contains the matrix with functions to be evaluated by python's eval(). e.g. the file containing the functions
+
+```x² + xy - 10 = 0
+y + 3xy² - 57 = 0```
+
+would be written as
+
+```x[0]**2 + x[0]*x[1] - 10 
+x[1] + 3*x[0]*x[1]**2 - 57```
+
+* \<initial\_guess\> A list of float numbers that will correspond to the initial guesses. For example, the file containing "1.5 3.5" would evaluate the previous given function to -2.5 and 1.625, respectively
+* \<max\_iterations\> An integer number representing the maximum number of iterations for which the Broyden method will be executed.
