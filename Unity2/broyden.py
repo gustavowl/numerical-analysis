@@ -1,3 +1,5 @@
+import sys
+
 def transpose(matrix):
 	return [[matrix[i][j] for i in range(len(matrix))]
 		for j in range(len(matrix[0]))]
@@ -92,12 +94,36 @@ def broyden(matrix, x, max_iterations):
 	return x
 
 
-y = [1.5, 3.5]
-#z = [[1, 0, 1],[1, 2,1],[2,2,2]]
-z = ["x[0]**2 + x[0]*x[1] - 10", 
-	"x[1] + 3*x[0]*x[1]**2 - 57"]
+if len(sys.argv) != 4:
+	print("Invalid number of arguments. Read the instruction.md file")
+else:
+	matrix_filename = sys.argv[1]
+	guess_filename = sys.argv[2]
+	max_iterations = int(sys.argv[3])
 
-x = broyden(z, y, 18)
-print("Result: " + str(x))
-for i in range(len(x)):
-	print("\tEvaluates eq[" + str(i) + ']' + str(eval(z[0])))
+	matrix = []
+	with open(matrix_filename) as file:
+		content = file.readlines()
+	file.close()
+	content = [x.strip() for x in content] #removes '\n' char from the end of line
+	for i in range(len(content)):
+		matrix.append(content[i])
+	#print(matrix)
+
+	guess = []
+	with open(guess_filename) as file:
+		temp = file.read().split()
+		guess = [float(x) for x in temp]
+	file.close()
+
+	#print(guess)
+	"""
+	y = [1.5, 3.5]
+	#z = [[1, 0, 1],[1, 2,1],[2,2,2]]
+	z = ["x[0]**2 + x[0]*x[1] - 10", 
+		"x[1] + 3*x[0]*x[1]**2 - 57"]
+	"""
+	x = broyden(matrix, guess, max_iterations)
+	print("Result: " + str(x))
+	for i in range(len(x)):
+		print("\tEvaluates eq[" + str(i) + ']' + str(eval(matrix[0])))
